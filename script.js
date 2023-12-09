@@ -133,7 +133,7 @@ submitBtn.addEventListener("click", () => {
     Array.from(allQuestions).forEach((question) => {
         question.remove()
     })
-    //submitBtn.remove()
+    submitBtn.remove()
 
     const score = document.createElement("h3")
     const resultText = document.createElement("p")
