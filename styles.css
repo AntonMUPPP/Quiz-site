@@ -92,4 +92,23 @@ body {
   width: 200px;
   height: 60px;
   font-size: larger;
+}
+
+.result-window {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 48px;
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  border-radius: 12px;
+  background-color: cadetblue;
+}
+.result-window h3 {
+  font-size: 48px;
+}
+.result-window p {
+  font-size: 24px;
 }/*# sourceMappingURL=styles.css.map */

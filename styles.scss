@@ -91,3 +91,22 @@ body{
         font-size: larger;
     }
 }
+
+.result-window{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 48px;
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 12px;
+    background-color: cadetblue;
+    h3{
+        font-size: 48px;
+    }
+    p{
+        font-size: 24px;
+    }
+}

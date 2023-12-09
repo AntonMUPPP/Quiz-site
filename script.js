@@ -75,6 +75,8 @@ let wrapper = document.querySelector(".wrapper")
 let submitBtn = document.createElement("button")
 let allText = document.getElementsByTagName("h2")
 
+const resultWindow = document.querySelector(".result-window")
+
 function startQuiz(){
     const tempElement = document.querySelector(".temp-element")
     tempElement.remove()
@@ -125,4 +127,10 @@ submitBtn.addEventListener("click", () => {
 
     console.log(selectedAnswers)
     console.log("Correct Answers Count:", correctAnswersCount)
+
+    const allQuestions = document.getElementsByClassName("question-container")
+    Array.from(allQuestions).forEach((question) => {
+        question.remove()
+    })
+    submitBtn.remove()
 })
