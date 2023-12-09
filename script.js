@@ -75,7 +75,8 @@ let wrapper = document.querySelector(".wrapper")
 let submitBtn = document.createElement("button")
 let allText = document.getElementsByTagName("h2")
 
-const resultWindow = document.querySelector(".result-window")
+const resultWindow = document.createElement("div")
+resultWindow.classList.add("result-window")
 
 function startQuiz(){
     const tempElement = document.querySelector(".temp-element")
@@ -132,5 +133,23 @@ submitBtn.addEventListener("click", () => {
     Array.from(allQuestions).forEach((question) => {
         question.remove()
     })
-    submitBtn.remove()
+    //submitBtn.remove()
+
+    const score = document.createElement("h3")
+    const resultText = document.createElement("p")
+
+    wrapper.append(resultWindow)
+    score.innerText = `${correctAnswersCount}/10`
+    resultWindow.append(score)
+    if(correctAnswersCount >= questions.length * 0.75){
+        resultText.style.color = "green"
+        resultText.innerText = "Riktigt bra jobbat!"
+    }else if(correctAnswersCount >= questions.length * 0.50){
+        resultText.style.color = "orange"
+        resultText.innerText = "Bra jobbat!"
+    }else if(correctAnswersCount <= questions.length * 0.50){
+        resultText.style.color = "red"
+        resultText.innerText = "Underkänd!"
+    }
+    resultWindow.append(resultText)
 })
