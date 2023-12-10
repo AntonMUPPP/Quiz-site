@@ -15,10 +15,12 @@ let questions = [
     },
     {
         id: "q3",
-        question: "The sun is a planet.",
-        answers:`<label><input type="radio" name="answer3" id="true"> True</label>
-        <label><input type="radio" name="answer3" id="false"> False</label>`,
-        correctAnswerId: "false"
+        question: "Which planet is known as the Red Planet?",
+        answers:`<label><input type="radio" name="answer3" id="jupiter"> Jupiter</label>
+        <label><input type="radio" name="answer3" id="mars"> Mars</label>
+        <label><input type="radio" name="answer3" id="venus"> Venus</label>
+        <label><input type="radio" name="answer3" id="saturn"> Saturn</label>`,
+        correctAnswerId: "mars"
     },
     {
         id: "q4",
@@ -36,10 +38,12 @@ let questions = [
     },
     {
         id: "q6",
-        question: "The Eiffel Tower is made entirely of iron.",
-        answers:`<label><input type="radio" name="answer6" id="true"> True</label>
-        <label><input type="radio" name="answer6" id="false"> False</label>`,
-        correctAnswerId: "false"
+        question: "What is the powerhouse of the cell?",
+        answers:`<label><input type="radio" name="answer6" id="nucleus"> Nucleus</label>
+        <label><input type="radio" name="answer6" id="mitochondria"> Mitochondria</label>
+        <label><input type="radio" name="answer6" id="endoplasmic-reticulum"> Endoplasmic reticulum</label>
+        <label><input type="radio" name="answer6" id="golgi-apparatus"> Golgi apparatus</label>`,
+        correctAnswerId: "mitochondria"
     },
     {
         id: "q7",
@@ -50,10 +54,12 @@ let questions = [
     },
     {
         id: "q8",
-        question: "The moon has its own light source.",
-        answers:`<label><input type="radio" name="answer8" id="true"> True</label>
-        <label><input type="radio" name="answer8" id="false"> False</label>`,
-        correctAnswerId: "false"
+        question: "What is the largest mammal on Earth?",
+        answers:`<label><input type="radio" name="answer8" id="elephant"> Elephant</label>
+        <label><input type="radio" name="answer8" id="giraffe"> Giraffe</label>
+        <label><input type="radio" name="answer8" id="gorilla"> Gorilla</label>
+        <label><input type="radio" name="answer8" id="blue-whale"> Blue Whale</label>`,
+        correctAnswerId: "blue-whale"
     },
     {
         id: "q9",
