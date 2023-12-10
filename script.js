@@ -80,11 +80,6 @@ let questions = [
 
 let wrapper = document.querySelector(".wrapper")
 let submitBtn = document.createElement("button")
-let allText = document.getElementsByTagName("h2")
-const header = document.querySelector(".header")
-const myh1 = document.querySelector("h1")
-const themeBtn = document.querySelector(".theme-btn")
-
 
 for (let i = 0; i < questions.length; i++){     //For loop to append all of the questions from the array onto the page
     let questionContainer = document.createElement("div")       //Also adding pre-made classes to give them some styling
@@ -184,6 +179,9 @@ submitBtn.addEventListener("click", () => {
 
 
 function changeTheme(){
+    const myh1 = document.querySelector("h1")
+    const header = document.querySelector(".header")
+    const themeBtn = document.querySelector(".theme-btn")
     //Toggles darkmode classes on the elements that should be affected
     //Also toggles a class on the theme button to create a cool transition and hover effect
     document.body.classList.toggle("darkmode-bg")
