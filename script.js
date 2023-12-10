@@ -74,34 +74,31 @@ let questions = [
 let wrapper = document.querySelector(".wrapper")
 let submitBtn = document.createElement("button")
 let allText = document.getElementsByTagName("h2")
-
+const header = document.querySelector(".header")
+const myh1 = document.querySelector("h1")
+const themeBtn = document.querySelector(".theme-btn")
 const resultWindow = document.createElement("div")
 resultWindow.classList.add("result-window")
 
-function startQuiz(){
-    const tempElement = document.querySelector(".temp-element")
-    tempElement.remove()
+for (let i = 0; i < questions.length; i++){
+    let questionContainer = document.createElement("div")
+    questionContainer.classList.add("question-container")
 
-    for (let i = 0; i < questions.length; i++){
-        let questionContainer = document.createElement("div")
-        questionContainer.classList.add("question-container")
-    
-        let temp = document.createElement("div")
-        temp.classList.add("answer-container")
-        temp.innerHTML = questions[i].answers
-    
-        let questionName = document.createElement("h2")
-        questionName.innerText = questions[i].question
-        questionContainer.append(questionName)
-    
-        wrapper.append(questionContainer)
-        questionContainer.append(temp)
-    }
+    let temp = document.createElement("div")
+    temp.classList.add("answer-container")
+    temp.innerHTML = questions[i].answers
 
-    const submitContainer = document.querySelector(".submit-btn")
+    let questionName = document.createElement("h2")
+    questionName.innerText = questions[i].question
+    questionContainer.append(questionName)
+
+    wrapper.append(questionContainer)
+    questionContainer.append(temp)
+}
+
+const submitContainer = document.querySelector(".submit-btn")
     submitBtn.innerText = "Submit"
     submitContainer.append(submitBtn)
-}
 
 submitBtn.addEventListener("click", () => {
     let selectedAnswers = []
@@ -140,16 +137,32 @@ submitBtn.addEventListener("click", () => {
 
     wrapper.append(resultWindow)
     score.innerText = `${correctAnswersCount}/10`
-    resultWindow.append(score)
     if(correctAnswersCount >= questions.length * 0.75){
         resultText.style.color = "green"
+        score.style.color = "green"
         resultText.innerText = "Riktigt bra jobbat!"
     }else if(correctAnswersCount >= questions.length * 0.50){
         resultText.style.color = "orange"
+        score.style.color = "orange"
         resultText.innerText = "Bra jobbat!"
     }else if(correctAnswersCount <= questions.length * 0.50){
         resultText.style.color = "red"
+        score.style.color = "red"
         resultText.innerText = "Underkänd!"
     }
+    resultWindow.append(score)
     resultWindow.append(resultText)
 })
+
+function changeTheme(){
+    document.body.classList.toggle("darkmode-bg")
+    header.classList.toggle("darkmode-header")
+    myh1.classList.toggle("darkmode-txt")
+    themeBtn.classList.toggle("active")
+
+    let questionContainers = document.querySelectorAll(".question-container")
+    questionContainers.forEach(container => {
+        let questionName = container.querySelector("h2")
+        questionName.classList.toggle("darkmode-txt")
+    })
+}

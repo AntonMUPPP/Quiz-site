@@ -5,12 +5,13 @@ html {
 
 body {
   margin: 0;
+  min-height: 100vh;
 }
 
 .header {
   width: 100vw;
   height: 10vh;
-  background-color: peru;
+  background-color: #f09047;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,7 +48,7 @@ body {
 }
 
 .submit-btn {
-  height: 200px;
+  height: 150px;
   margin-top: 24px;
   display: flex;
   justify-content: center;
@@ -77,23 +78,6 @@ body {
   transform: scale(1.02);
 }
 
-.temp-element {
-  width: 100%;
-  height: -moz-fit-content;
-  height: fit-content;
-  text-align: center;
-}
-.temp-element h2 {
-  word-wrap: break-word;
-  font-size: 64px;
-}
-.temp-element button {
-  margin-top: 64px;
-  width: 200px;
-  height: 60px;
-  font-size: larger;
-}
-
 .result-window {
   display: flex;
   flex-direction: column;
@@ -111,4 +95,41 @@ body {
 }
 .result-window p {
   font-size: 24px;
+}
+
+.theme-btn {
+  position: sticky;
+  top: 0;
+  width: 80px;
+  height: 80px;
+  margin: 8px;
+  border-radius: 50%;
+  border: none;
+  background-color: #FFE484;
+}
+.theme-btn:hover {
+  cursor: pointer;
+  transition: 0.25s;
+  transition-delay: 0.5s;
+  background-color: #8e8d8a;
+}
+.theme-btn.active {
+  background-color: #8e8d8a;
+}
+.theme-btn.active:hover {
+  transition: 0.25s;
+  transition-delay: 0.5s;
+  background-color: #FFE484;
+}
+
+.darkmode-header {
+  background-color: #131417;
+}
+
+.darkmode-bg {
+  background-color: #1e1f26;
+}
+
+.darkmode-txt {
+  color: aliceblue;
 }/*# sourceMappingURL=styles.css.map */
