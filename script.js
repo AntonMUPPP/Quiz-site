@@ -101,6 +101,8 @@ const submitContainer = document.querySelector(".submit-btn")
     submitContainer.append(submitBtn)
 
 submitBtn.addEventListener("click", () => {
+    window.scrollTo(0,0)
+    
     let selectedAnswers = []
     let correctAnswersCount = 0
 
@@ -108,7 +110,7 @@ submitBtn.addEventListener("click", () => {
         let questionContainer = document.querySelectorAll(".question-container")[i]
         let selectedRadio = questionContainer.querySelector('input[type="radio"]:checked')
 
-        if (selectedRadio) {
+        if(selectedRadio){
             let userAnswerId = selectedRadio.id
             let isCorrect = userAnswerId === questions[i].correctAnswerId
 
@@ -117,18 +119,25 @@ submitBtn.addEventListener("click", () => {
                 isCorrect: isCorrect
             })
 
-            if (isCorrect) {
+            if(isCorrect){
                 correctAnswersCount++
+                questionContainer.style.backgroundColor = "green"
+            }else if(!isCorrect){
+                questionContainer.style.backgroundColor = "red"
             }
+        }
+        else{
+            console.log(`question ${i+1} is unanswered`)
+            questionContainer.style.backgroundColor = "gray"
         }
     }
 
     console.log(selectedAnswers)
     console.log("Correct Answers Count:", correctAnswersCount)
 
-    const allQuestions = document.getElementsByClassName("question-container")
-    Array.from(allQuestions).forEach((question) => {
-        question.remove()
+    const allAnswers = document.getElementsByClassName("answer-container")
+    Array.from(allAnswers).forEach((answer) => {
+        answer.remove()
     })
     submitBtn.remove()
 
@@ -152,6 +161,14 @@ submitBtn.addEventListener("click", () => {
     }
     resultWindow.append(score)
     resultWindow.append(resultText)
+
+    const retakeBtn = document.createElement("button")
+    retakeBtn.innerText = "Retake Quiz"
+    submitContainer.append(retakeBtn)
+    retakeBtn.addEventListener("click", () => {
+        location.reload()
+        window.scrollTo(0,0)
+    })
 })
 
 function changeTheme(){
