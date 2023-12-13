@@ -10,13 +10,13 @@ body{
 
 .header{
     width: 100vw;
-    height: 10vh;
+    height: fit-content;
     background-color: #f09047;
     display: flex;
     justify-content: center;
     align-items: center;
     h1{
-        margin: 0px;
+        margin: 8px;
     }
 }
 
@@ -31,7 +31,6 @@ body{
 .question-container{
     width: 500px;
     margin-top: 12px;
-    //height: 400px;
     height: fit-content;
     border: 2px solid black;
     border-radius: 12px;
@@ -39,7 +38,7 @@ body{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: cadetblue;
+    background-color: #f09047;
     h2{
         word-wrap: break-word;
         max-width: 100%;
@@ -54,6 +53,7 @@ body{
     justify-content: center;
     align-items: flex-start;
     button{
+        font-size: 24px;
         width: 200px;
         height: 60px;
     }
@@ -87,17 +87,16 @@ body{
     height: 200px;
     border: 2px solid black;
     border-radius: 12px;
-    background-color: cadetblue;
+    background-color: #f09047;
     h3{
+        -webkit-text-stroke: 1px black;
         font-size: 48px;
     }
     p{
+        -webkit-text-stroke: 0.5px black;
         font-size: 24px;
     }
 }
-
-//#FFE484 fär för sol
-//#8e8d8a färg för måne
 
 .theme-btn{
     position: sticky;
